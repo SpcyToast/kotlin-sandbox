@@ -13,9 +13,19 @@ fun main() {
     // println used to output to the console
     println(concat)
     // strings are a sequence of characters, characters can be called like an array by variable[index]
-//    println(firstName[6])
+    println(firstName[6])
+    // to get more of the string you can use substring
+    // following code gets the characters 6-8 from first name string. the end value is not shown
+    println(firstName.substring(6,9))
     // can check for empty, null, or blank
     println(lastName.isEmpty())
     // can get length using .length
     println(concat.length)
+    // conditionals
+    val score: Int = 30
+    if (score >= 70){
+        println("you passed!")
+    } else {
+        println("you failed")
+    }
 }
