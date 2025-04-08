@@ -4,7 +4,9 @@ fun main() {
     println("")
     conditionalContent(input = 71)
     println("")
-    arrayContent()
+    val characters = arrayContent()
+    println("")
+    loopsContent(characters)
 }
 
 fun variableContent() {
@@ -16,12 +18,13 @@ fun variableContent() {
     // use : to show type (primitive types include String, Int, Double, Boolean)
     val lastName: String = "Squarepants"
     // var is used for mutable values therefore it is read and write
+    // add ? t0 type to maybe a variable nullable
     var weight: Int = 71
-    var active: Boolean = true
+    var active: Boolean? = null
     println("First name: $firstName, Last name: $lastName, weight: $weight, active: $active")
     // Reassigning values can be done by
     weight = 72
-    active = false
+    active = true
     println("Updated")
     println("First name: $firstName, Last name: $lastName, weight: $weight, active: $active")
     // concatenation can be done by adding strings or by using a template as shown below
@@ -60,7 +63,7 @@ fun conditionalContent(input: Int){
     println("-- End of Conditionals Output --")
 }
 
-fun arrayContent() {
+fun arrayContent(): MutableList<String> {
     println("-- Start of Array Output --")
     println("")
     // arrays contain values of the same type, types can be declared using listOF<Type> otherwise type is inferred
@@ -81,4 +84,19 @@ fun arrayContent() {
     println("The current party consists of " + characters[0] + ", " + characters[1] + ", and " + characters[2])
     println("")
     println("-- End of Array Output --")
+    return characters
+}
+
+fun loopsContent(characters: MutableList<String>) {
+    println("-- Start of Loop Output --")
+    println("")
+    for (character in characters) {
+        println("Party Member: $character")
+    }
+    // use start .. end to cover the complete range of loop, use start until end to cover all values until the end. End value will not be included in the end
+    for (i in 1..3){
+        println("increment $i")
+    }
+    println("")
+    println("-- End of Loop Output --")
 }
